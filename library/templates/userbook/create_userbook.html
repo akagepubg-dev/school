@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Create UserBook{% endblock %}
+{% block content %}
+
+<h1>
+    Create
+</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <button>
+        yaratish
+    </button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}UserBook{% endblock %}
+{% block content %}
+
+<h1>Barcha o'quvchilar o'qiyotgan kitoblar ro'yxati:</h1>
+
+<form>
+    <input placeholder="BOSING....." name="search" value="{{ search }}">
+    <button>
+        qidirish
+    </button>
+</form>
+
+<ol>
+    {% for userbook in userbooks %}
+        <li>
+            <a href="{% url 'userbook' userbook.pk %}">
+                {{ userbook.user.first_name }} {{ userbook.user.last_name }}
+                -
+                {{ userbook.book.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ol>
+
+<h1>
+    yagi yaratish uchun:
+</h1>
+<a href="{% url 'create_userbook'%}">
+    create
+
+</a>
+
+<p>Qolgan bo'limlarga o'tish:</p>
+
+<a href="{% url 'books' %}">kitoblar</a>
+<br>
+
+<a href="{% url 'users' %}">o'quvchilar</a>
+
+<p>Asosiy oynaga qaytish:</p>
+
+<a href="{% url 'home' %}">uy</a>
+
+{% endblock %}

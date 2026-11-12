@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}User{% endblock %}
+
+{% block content %}
+
+<h1>{{ user.first_name }} {{ user.last_name }} haqida to'liq ma'lumot</h1>
+
+<h2>
+    Ismi: {{ user.first_name }}
+    <br>
+    Familiyasi: {{ user.last_name }}
+</h2>
+
+<h3>
+    Lavozimi: {{ user.role }}
+    <br>
+    Yoshi: {{ user.age }}
+</h3>
+  <p>Asosiy oynaga qaytish:</p>
+<a href="{% url 'books' %}">book ga o'tish</a>
+<br>
+<a href="{% url 'userbooks' %}">userbook ga o'tish</a>
+<br>
+<a href="{% url 'home' %}">uy</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}UserBook{% endblock %}
+{% block content %}
+
+<h1>{{ userbook.user.first_name }} {{ userbook.user.last_name }} haqida to'liq ma'lumot</h1>
+<h2>
+    {{ userbook.book.title }} kitobidan bizda jami: {{ userbook.book.count }} ta
+</h2>
+<h3>
+    {{ userbook.book.title }} kitobining egasi: {{ userbook.user.first_name }} {{ userbook.user.last_name }}
+    tarifi: {{ userbook.book.description }}
+</h3>
+
+
+
+<p>Qolgan bo'limlarga o'tish:</p>
+<p>Asosiy oynaga qaytish:</p>
+<a href="{% url 'books' %}">book ga o'tish</a>
+<br>
+<a href="{% url 'users' %}">user ga o'tish</a>
+<br>
+<a href="{% url 'home' %}">uy</a>
+{% endblock %}

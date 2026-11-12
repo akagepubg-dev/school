@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Kitoblar{% endblock %}
+
+{% block content %}
+
+<h1>Barcha kitoblar ro'yxati:</h1>
+
+<form method="GET">
+    <input
+        type="text"
+        name="search"
+        placeholder="Kitob yoki muallifni qidir..."
+        value="{{ search }}"
+    >
+    <button type="submit">Qidirish</button>
+</form>
+
+<ol>
+    {% for book in books %}
+    <li><a href="{% url 'book' book.pk %}">{{ book.title }} - {{ book.author }}</a></li>
+    {%endfor%}
+</ol>
+
+
+
+<h1>
+    yangi sahifa:
+</h1>
+<a href="{% url 'create_book'%}">
+    create
+
+</a>
+
+{% if search and not books %}
+    <p style=>Bunaqa so'z yo'q!</p>
+{% else %}
+    <ol>
+        {% for book in books %}
+<!--            <li>-->
+<!--                <a>{{ book.title }} </a> — {{ book.author }}-->
+<!--            </li>-->
+        {% empty %}
+            <li>Kitoblar mavjud emas.</li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<a href="{% url 'users' %}">O'quvchilar</a>
+<br>
+<a href="{% url 'userbooks' %}">O'quvchi kitoblari</a>
+
+<p>Asosiy oynaga qaytish:</p>
+
+<a href="{% url 'home' %}">uy</a>
+
+{% endblock %}
+
+
+
+
+
+
+
