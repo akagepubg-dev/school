@@ -17,10 +17,35 @@
     <br>
     Yoshi: {{ user.age }}
 </h3>
-  <p>Asosiy oynaga qaytish:</p>
-<a href="{% url 'books' %}">book ga o'tish</a>
+<p>Asosiy oynalarga qaytish:</p>
+<a href="{% url 'books' %}">
+    <button>
+        book ga o'tish
+    </button>
+</a>
+
 <br>
-<a href="{% url 'userbooks' %}">userbook ga o'tish</a>
 <br>
-<a href="{% url 'home' %}">uy</a>
+<a href="{% url 'userbooks' %}">
+    <button>
+        userbook ga o'tish
+    </button>
+</a>
+
+<br>
+<br>
+<a href="{% url 'home' %}">
+    <button>
+        Uy
+    </button>
+</a>
+<br>
+<p>Orqaga qaytish tugmasi:</p>
+
+<a href="{% url 'users' %}">
+    <button>
+        orqaga
+    </button>
+</a>
+
 {% endblock %}

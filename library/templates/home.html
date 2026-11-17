@@ -6,12 +6,18 @@
 
 <h1>Bizning maktabimizga xush kelibsiz</h1>
 <p>Maktabimizda bor barcha bo'limlar:</p>
-<a href="{% url 'books' %}">Kitoblar</a>
+
+<form action="book">
+    <button>
+         kitoblar:
+    </button>
+</form>
 <br>
-<a href="{% url 'users' %}">O'quvchilar</a>
-<br>
-<a href="{% url 'userbooks' %}">O'quvchi kitoblari</a>
-<br>
+<form action="users">
+    <button>
+         o'quvchilar:
+    </button>
+</form>
 <br>
 <form action="userbooks">
     <button>
@@ -19,17 +25,6 @@
     </button>
 </form>
 
-<form action="users">
-    <button>
-         o'quvchilar:
-    </button>
-</form>
-
-<form action="book">
-    <button>
-         kitoblar:
-    </button>
-</form>
 
 
 {% endblock %}

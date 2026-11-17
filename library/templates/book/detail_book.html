@@ -10,11 +10,35 @@
     {{ book.title }} kitobini egasi: {{ book.author }}
     tarifi: {{ book.description }}
 </h3>
+<p>Asosiy oynalarga qaytish:</p>
+<a href="{% url 'users' %}">
+    <button>
+        user ga o'tish
+    </button>
+</a>
 
-  <p>Asosiy oynaga qaytish:</p>
-<a href="{% url 'users' %}">user ga o'tish</a>
 <br>
-<a href="{% url 'userbooks' %}">userbook ga o'tish</a>
 <br>
-<a href="{% url 'home' %}">uy</a>
+<a href="{% url 'userbooks' %}">
+    <button>
+        userbook ga o'tish
+    </button>
+</a>
+
+<br>
+<br>
+<a href="{% url 'home' %}">
+    <button>
+        Uy
+    </button>
+</a>
+<br>
+<p>Orqaga qaytish tugmasi:</p>
+
+<a href="{% url 'books' %}">
+    <button>
+        orqaga
+    </button>
+</a>
+
 {% endblock %}
