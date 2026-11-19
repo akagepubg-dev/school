@@ -16,12 +16,10 @@ SECRET_KEY = env.str('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'qochqarov.pythonanywhere.com',
     '127.0.0.1',
     'localhost',
-    'qochqarov.pythonanywhere.com'
 ]
-
-
 # Application definition
 
 INSTALLED_APPS = [
